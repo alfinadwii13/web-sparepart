@@ -36,13 +36,13 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="application/views/admin/dashboard.php">
+              <a class="nav-link active" href="dashboard.html">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="application/views/admin/sparepart.php">
+              <a class="nav-link" href="tables.html">
                 <i class="ni ni-bullet-list-67 text-green"></i>
                 <span class="nav-link-text">Sparepart</span>
               </a>
@@ -152,7 +152,6 @@
                   <i class="ni ni-single-02"></i>
                   <span>Settings</span>
                 </a>
-                
                 <a href="#!" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
@@ -188,97 +187,6 @@
               </a>
             </div>
           </div>
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total out of spareparts</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Secondary Bobbin Assy</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Assy 1 Potting</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
-                        <i class="ni ni-money-coins"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="mt-3 mb-0 text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -290,10 +198,7 @@
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col">
-                  <h3 class="mb-0">Limit Stock</h3>
-                </div>
-                <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                  <h3 class="mb-0">Sparepart List</h3>
                 </div>
               </div>
             </div>
@@ -303,12 +208,15 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">Nomor</th>
+                    <th scope="col">Picture</th>
                     <th scope="col">Status</th>
                     <th scope="col">Code Tool</th>
+                    <th scope="col">Machine</th>
                     <th scope="col">Name</th>
                     <th scope="col">Type</th>
                     <th scope="col">Maker</th>
-                    <th scope="col">End Stock</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Stock End</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -323,12 +231,28 @@
                     </th>
                     <td>
                       <?php
+                        echo($key["picture"]);
+                      ?>
+                    </td>
+                    <td>
+                      <td><img data-cfsrc="img/new-product/5-small.jpg" alt="" src="https://colorlib.com/polygon/nalika/img/new-product/5-small.jpg"></td>
+                        <td>Product Title 1</td>
+                      <td>
+                      <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                      <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                      <?php
                         echo($key["status"]);
                       ?>
                     </td>
                     <td>
                       <?php
                         echo($key["code_tool"]);
+                      ?>
+                    </td>
+                    <td>
+                      <?php
+                        echo($key["machine"]);
                       ?>
                     </td>
                     <td>
@@ -344,6 +268,11 @@
                     <td>
                       <?php
                         echo($key["maker"]);
+                      ?>
+                    </td>
+                    <td>
+                      <?php
+                        echo($key["unit_price"]);
                       ?>
                     </td>
                     <td>
