@@ -36,13 +36,13 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="application/views/admin/dashboard.php">
+              <a class="nav-link active" href=<?php echo base_url("/sparepart") ?>>
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="application/views/admin/sparepart.php">
+              <a class="nav-link" href=<?php echo base_url("/sparepart") ?>>
                 <i class="ni ni-bullet-list-67 text-green"></i>
                 <span class="nav-link-text">Sparepart</span>
               </a>
